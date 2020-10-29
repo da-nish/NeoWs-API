@@ -1,4 +1,5 @@
-# login1
+# NeoWs API
+Near Earth Object Web Service
 
 ## Project setup
 ```
