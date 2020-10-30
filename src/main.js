@@ -9,6 +9,7 @@ import Secure from './components/Secure.vue'
 import Register from "./components/Register.vue"
 import Neofeed from "./components/Neofeed.vue"
 import firebase from "firebase"
+import store from './store'
 
 Vue.use(VueRouter);
 Vue.config.productionTip = false
@@ -92,5 +93,9 @@ router.beforeEach((to, from, next)=> {
 
 new Vue({
   router,
+  store,
+  beforeCreate() {//on load check userIsLogged in using vuex mutations
+    this.$store.dispatch('checkUser');
+  },
   render: h => h(App),
 }).$mount('#app')
